@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Poppins:wght@100;200;300;400;500;600;700;800&&family=Inter:wght@500;600;700;800;900&display=swap');
+
+:root {
+
+    --fs-body: clamp(1.2rem, 2vw, 3.6rem);
+    --fs-main: clamp(1.4rem, 2vh, 3.6rem);
+    --fs-title: clamp(3rem, 5vh, 6rem);
+
+    --font-inter: 'Inter', sans-serif;
+    --font-barlow: 'Barlow', sans-serif;
+    --font-poppins: 'Poppins', sans-serif;
+
+    --ciano-default-color: hsla(184, 100%, 49%, 1);
+    --ciano-gradient: linear-gradient(0deg, rgba(0,192,235,1) 0%, rgba(0,135,235,1) 100%);
+    --ciano-hover: hsla(184, 100%, 38%, 1);
+    --blue-dark-color: #282A2C;
+
+    --white: hsla(220, 23%, 97%, 1);
+    --black: hsla(200, 7%, 9%, 1);
+    --black-100: hsla(200, 7%, 9%, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    list-style: none;
+    text-decoration: none;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Barlow', sans-serif;
+    background-color: var(--black);
+}
+
+.container_header, .section_sobre, .section_qualificacoes, .section_servico, .section_tech, .section_projetos, .section_contato {
+    max-width: 140rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section_sobre, .section_qualificacoes, .section_servico, .section_tech, .section_projetos, .section_contato {
+    margin-top: 9rem;
+    padding-top: 3.2rem;
+}
+
+.destaque {
+    color: var(--ciano-default-color);
+}
+
