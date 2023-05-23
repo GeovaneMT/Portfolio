@@ -465,6 +465,10 @@
     width: 17rem;
 }
 
+.curso {
+    max-height: 5rem;
+}
+
 .section_qualificacoes .container_qualificacoes .lista .li .cargo {
     font-family: var(--font-barlow);
     font-weight: 600;
