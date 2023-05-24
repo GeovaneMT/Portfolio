@@ -15,8 +15,12 @@
   }
   
   .loading-message {
-    font-size: 24px;
-    color: var(--white)
+    color: var(--white);
+  }
+
+  .loading-message img {
+    width: 15rem;
+    height: 15rem;
   }
   
   .content {
@@ -135,12 +139,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to bottom, var(--black), hsla(0, 0%, 0%, 0.3), var(--black));
+    background: linear-gradient(to bottom, var(--black)10%, hsla(0, 0%, 0%, 0.3), var(--black)90%);
 }
 
 .section_mainbg  {
     width: 100%;
-    height: 100%;
+    height: 99vh;
     background: url(../img/background2.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -209,7 +213,7 @@
 
 /*______________________________________________________*/
 
-#footer, #bar {
+#bar {
     /* Auto layout */
     display: flex;
     gap: 1rem;
@@ -219,6 +223,7 @@
     min-height: 6rem;
     max-height: 8vh;
     padding: 2rem 3.2rem;
+    bottom: 3.2rem;
     
     border-radius: 33px;
     background: #282A2C;
@@ -228,41 +233,47 @@
     
     left: 50%;
     transform: translateX(-50%);
-    }
+}
 
-#bar {
-    bottom: 3.2rem;
+#hid {
+    opacity: 0;
+    position: relative;
+}
+
+#base {
+    opacity: 1;
+    position: absolute;
 }
 
 #hid, #base {
     max-height: 40px;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
 #icons:hover #hid {
-    display: block;
+    opacity: 1;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
 }
 
 #icons:hover #base {
-    display: none;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
 }
 
-#hid {
-    display: none;
-}
-
-  .show-footer {
+.show-footer {
     opacity: 1 !important;
     visibility: visible !important;    
     transition: all 0.5s ease !important; 
     transition-delay: 0.3s !important; 
-  }
+}
 
-  .hide-footer {
+.hide-footer {
     opacity: 0 !important;
     visibility: hidden !important;    
     transition: all 0.5s ease !important; 
-  }
+}
 
 /*_____________________________________________________*/
 
@@ -855,14 +866,14 @@
     bottom: 3.2rem;
     left: 50%;
     transition: all 0.3s ease-in-out;
-    transform: translateX(-50%) translateY(-3.2rem);
+    transform: translateX(-50%) translateY(20rem);
 
     /*____________________________*/
 }
 
 .hide-button {
     opacity: 0 !important;
-    transform: translateX(-50%) translateY(3.2rem) !important;
+    transform: translateX(-50%) translateY(10rem) !important;
 }
 
 .botao_topo p {
@@ -892,6 +903,16 @@
     color: var(--white);
 }
 
+.overlay {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5rem; /* Adjust the height as needed */
+    background-image: linear-gradient(to top, var(--black), rgba(0, 0, 0, 0));
+    z-index: 9999; /* Set the appropriate z-index value */
+}
+
 @media (min-width: 621px) { 
 
     .section_sobre .container_sobre .texto_destaque_group {
@@ -906,6 +927,15 @@
 }
 
 @media (max-width: 1000px) {
+
+    #hid {
+        opacity: 1;
+    }
+    
+    #base {
+        display: none;
+    }
+    
     .section_sobre .foto_perfil {
         min-width: 40rem;
         height: 40rem;
