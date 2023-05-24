@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
       header.classList.add("show-header");
       header.classList.remove("hide-header");
       botaoTopo.style.opacity = "1";
-      botaoTopo.style.height = "40px";
+      botaoTopo.style.transform = "translateY(-3.2rem) translateX(-50%)";
     } else if (currentScrollPos > 0) {
       header.classList.add("hide-header");
       header.classList.remove("show-header");
@@ -140,4 +140,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("scroll", handleScroll);
   window.addEventListener("resize", handleScroll);
+});
+
+/*_________________________________________________________________________*/
+
+window.addEventListener('scroll', function() {
+  var parallax = document.querySelector('.section_mainbg');
+  var scrollPosition = window.pageYOffset;
+  parallax.style.backgroundPositionY = scrollPosition * 0.7 + 'px';
+  parallax.style.transform = 'translateY(' + scrollPosition * -0.3 + 'px)';
+});
+
+
+/*_________________________________________________________________________*/
+
+// JavaScript to hide the loading screen when content is ready
+window.addEventListener('load', function () {
+  const loadingScreen = document.querySelector('.loading-screen');
+  const content = document.querySelector('.content');
+
+  // Show the loading screen initially
+  loadingScreen.style.display = 'flex';
+  content.style.display = 'none';
+
+  // Set a minimum time in milliseconds
+  const minimumTime = 1200; // 2 seconds
+
+  // Calculate the remaining time to reach the minimum time
+  const loadTime = Date.now() - window.performance.timing.navigationStart;
+  const remainingTime = Math.max(0, minimumTime - loadTime);
+
+  // Delay hiding the loading screen until the minimum time has passed
+  setTimeout(function () {
+    loadingScreen.style.display = 'none';
+    content.style.display = 'none';
+  }, remainingTime);
 });
