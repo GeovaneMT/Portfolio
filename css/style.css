@@ -855,13 +855,14 @@
     bottom: 3.2rem;
     left: 50%;
     transition: all 0.3s ease-in-out;
+    transform: translateX(-50%) translateY(-3.2rem);
 
     /*____________________________*/
 }
 
 .hide-button {
     opacity: 0 !important;
-    transform: translateX(-50%) translateY(3rem) !important;
+    transform: translateX(-50%) translateY(3.2rem) !important;
 }
 
 .botao_topo p {
