@@ -904,6 +904,11 @@
     /*____________________________*/
 }
 
+.botao_topo:hover p {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
 .hide-button {
     opacity: 0 !important;
     transform: translateX(-50%) translateY(10rem) !important;
@@ -913,6 +918,7 @@
     background: var(--blue-dark-color);
     border-radius: 5rem;    
     padding: 1rem 2rem;
+    transition: all 0.3s ease-in-out;
 }
 
 .botao_topo .icone {
