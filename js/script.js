@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
         header.classList.add("hide-header");
         header.classList.remove("show-header");
         botaoTopo.style.opacity = "0";
-        botaoTopo.style.height = "0";
+        botaoTopo.style.transform = "translateY(10rem) translateX(-50%)";
         isScrollingUp = false;
       }
     }
