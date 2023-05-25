@@ -165,7 +165,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to bottom, rgba(21,23,25,1) 10%, hsla(0, 0%, 0%, 0.3), rgba(21,23,25,1)98%);
+    background: linear-gradient(to bottom, rgba(21,23,25,1), hsla(0, 0%, 0%, 0.1), rgba(21,23,25,1)95%);
     animation: Up 0.5s 1.7s forwards ease-in-out;
     opacity: 0;
 }
@@ -210,7 +210,7 @@
 }
 
 .section_main .container_main .titulo_main span {
-    background: var(--blue-dark-color);
+    background: var(--grey);
     border-radius: 5rem;
     padding: 0 2rem ;
 }
@@ -728,7 +728,8 @@
     gap: 1rem;
 }
 
-.section_projetos .container_projetos .card_projeto {
+.section_projetos .container_projetos .section_sobre .foto_perfil
+_projeto {
     width: 45rem;
     min-width: 31rem;
     height: 25rem;
@@ -738,19 +739,23 @@
     position: relative;
 }
 
-.section_projetos .container_projetos .card_projeto .imagem_fundo{
+.section_projetos .container_projetos .section_sobre .foto_perfil
+_projeto .imagem_fundo{
     width: 100%;
     height: 100%;
     object-fit: cover;
     position: absolute;
 }
 
-.section_projetos .container_projetos .card_projeto:hover .imagem_fundo {
+.section_projetos .container_projetos .section_sobre .foto_perfil
+_projeto:hover .imagem_fundo {
     opacity: .2;
     transition: all .3s;
 }
 
-.section_projetos .container_projetos .card_projeto .card_descricao {
+.section_projetos .container_projetos .section_sobre .foto_perfil
+_projeto .section_sobre .foto_perfil
+_descricao {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -760,17 +765,24 @@
     opacity: 0;
 }
 
-.section_projetos .container_projetos .card_projeto:hover .card_descricao {
+.section_projetos .container_projetos .section_sobre .foto_perfil
+_projeto:hover .section_sobre .foto_perfil
+_descricao {
     opacity: 1;
     animation: Up 0.8s;
 }
 
-.section_projetos .container_projetos .card_projeto .card_descricao .titulo_card{
+.section_projetos .container_projetos .section_sobre .foto_perfil
+_projeto .section_sobre .foto_perfil
+_descricao .titulo_card{
     color: var(--white);
     font-size: 2.4rem; 
 }
 
-.section_projetos .container_projetos .card_projeto .card_descricao .card_nav {
+.section_projetos .container_projetos .section_sobre .foto_perfil
+_projeto .section_sobre .foto_perfil
+_descricao .section_sobre .foto_perfil
+_nav {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -778,18 +790,27 @@
     z-index: 2;
 }
 
-.section_projetos .container_projetos .card_projeto .card_descricao .card_nav .button {
+.section_projetos .container_projetos .section_sobre .foto_perfil
+_projeto .section_sobre .foto_perfil
+_descricao .section_sobre .foto_perfil
+_nav .button {
     width: 10rem;
     height: 3rem;
     border-radius: 3.5rem;
     background: transparent;
     cursor: pointer;
 }
-.section_projetos .container_projetos .card_projeto .card_descricao .card_nav .github {
+.section_projetos .container_projetos .section_sobre .foto_perfil
+_projeto .section_sobre .foto_perfil
+_descricao .section_sobre .foto_perfil
+_nav .github {
     background: rgb(166, 0, 255);
 }
 
-.section_projetos .container_projetos .card_projeto .card_descricao .card_nav .site {
+.section_projetos .container_projetos .section_sobre .foto_perfil
+_projeto .section_sobre .foto_perfil
+_descricao .section_sobre .foto_perfil
+_nav .site {
     background: var(--ciano-default-color);
 }
 
@@ -986,6 +1007,10 @@
 }
 
 @media (max-width: 900px) {
+    :root {
+        --card-width: 50vw !important;
+        --card-height: 50vw !important;
+      }
 
     .section_main .container_main .titulo_main {
         font-size: 3rem;
@@ -1041,6 +1066,8 @@
     }
 }
 @media (max-width: 620px) {
+
+    
     .section_main .container_main .cargo_main {
         font-size: 3.5rem;
     }
@@ -1072,6 +1099,12 @@
 
 }
 @media (max-width: 430px) {
+    
+    :root {
+        --card-width: 60vw !important;
+        --card-height: 60vw !important;
+      }
+
     html {
         font-size: 60%;
     }
@@ -1212,3 +1245,106 @@
         transform: translateY(-1rem);
     }
 }
+
+  @property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+  
+  :root {
+    --card-width: 30vw;
+    --card-height: 30vw;
+  }
+  
+  
+  body {
+    background: #212534;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    box-sizing: border-box;
+  }
+  
+  
+  .card {
+    background: url(../img/foto_perfil.jpg);
+    background-size: cover ;
+    width: var(--card-width);
+    height: var(--card-height);
+    padding: 3px;
+    position: relative;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    font-size: 1.5em;
+    color: rgb(88 199 250 / 0%);
+    cursor: pointer;
+    font-family: cursive;
+  }
+  
+  .card:hover {
+    color: rgb(88 199 250 / 100%);
+    transition: color 1s;
+  }
+  .card:hover:before, .card:hover:after {
+    animation: none;
+    opacity: 0;
+  }
+  
+  
+  .card::before {
+    content: "";
+    width: 104%;
+    height: 102%;
+    border-radius: 50%;
+    background-image: linear-gradient(
+      var(--rotate)
+      , #5ddcff, #3c67e3 43%, #4e00c2);
+      position: absolute;
+      z-index: -1;
+      top: -1%;
+      left: -2%;
+      animation: spin 2.5s linear infinite;
+  }
+  
+  .card::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(
+      var(--rotate)
+      , #5ddcff, #3c67e3 43%, #4e00c2);
+      opacity: 1;
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }
+  
+  a {
+    color: #212534;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-top: 2rem;
+  }
