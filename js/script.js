@@ -200,7 +200,7 @@ function debounce(func, delay) {
 
 window.addEventListener('load', function() {
   const loadingScreen = document.querySelector('.loading-screen');
-  const minimumTime = 1800; // 2 seconds
+  const minimumTime = 2300; // 2 seconds
 
   // Show the loading screen initially
   loadingScreen.style.display = 'flex';
