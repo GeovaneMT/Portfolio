@@ -18,7 +18,7 @@
     --white: hsla(220, 23%, 97%, 1);
     --black: hsla(200, 7%, 9%, 1);
     --black-100: hsla(200, 7%, 9%, 0.5);
-    --grey: rgba(40, 42, 44, 0.8);
+    --grey: rgba(40, 42, 44, 0.4);
 
 }
 
@@ -54,6 +54,6 @@ body {
 }
 
 .destaque {
-    color: var(--ciano-default-color);
+    color: #F6AE2D;
 }
 
