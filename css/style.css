@@ -934,17 +934,12 @@ _nav .site {
     /*____________________________*/
 }
 
-.botao_topo:hover p {
-    transform: scale(1.1);
-    transition: all 0.3s ease-in-out;
-}
-
 .hide-button {
     opacity: 0 !important;
     transform: translateX(-50%) translateY(10rem) !important;
 }
 
-.botao_topo p {
+.botao_topo #topbg {
     background: var(--blue-dark-color);
     border-radius: 5rem;    
     padding: 1rem 2rem;
@@ -1322,7 +1317,19 @@ _nav .site {
       left: -2%;
       animation: spin 2.5s linear infinite;
   }
-  
+
+  #topbg:before {
+    content: "";
+    width: 104%;
+    height: 70%;
+    border-radius: 5rem;
+    background-image: linear-gradient( var(--rotate) , #5ddcff, #3c67e3 43%, #4e00c2);
+    position: absolute;
+    z-index: -1;
+    top: 2.4rem;
+    left: -2%;
+    animation: spin 2.5s linear infinite;
+}
   .card::after {
     position: absolute;
     content: "";
@@ -1339,6 +1346,23 @@ _nav .site {
       var(--rotate)
       , #5ddcff, #3c67e3 43%, #4e00c2);
       opacity: 1;
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+  }
+  #topbg::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 30);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 15%;
+    width: 115%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient( var(--rotate) , #5ddcff, #3c67e3 43%, #4e00c2);
+    opacity: 1;
     transition: opacity .5s;
     animation: spin 2.5s linear infinite;
   }
