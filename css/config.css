@@ -27,7 +27,7 @@
     width: 1.2rem;
     height: 1.2rem;
     background: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
-    border: 5px solid var(--blue-dark-color);
+    border: 5px solid var(--black);
   }
   ::-webkit-scrollbar-thumb {
     background: var(--blue-dark-color);
